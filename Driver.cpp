@@ -1,6 +1,6 @@
 //
 //  Driver.cpp
-//  Final_Project_Jmeli
+//  
 //
 //  Created by Joe Meli on 4/29/16.
 //  Copyright © 2016 Joe Meli. All rights reserved.
@@ -25,8 +25,8 @@ int main(){
     // Show there are no Cards left in the Deck
     myDeck.moreCards();
     std::cout<< "********* END OF SOLUTION  to Problem 1*****" << std::endl<<std:: endl;
-    
-    
+
+
     std::cout<< "*********  SOLUTION  to Problem 2-5 *****" <<std:: endl;
     int NumberOfHands = 0;
     DeckOfCards gameDeck1;
@@ -62,7 +62,7 @@ int main(){
             break;
         }
     }while( gameDeck1.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck2;
     gameDeck2.shuffleDeck();
@@ -93,12 +93,12 @@ int main(){
         gameDeck2.shuffleDeck();
         Player.DealNewHand(&gameDeck2);
         Dealer.DealNewHand(&gameDeck2);
-        
+
         if(gameDeck2.size() < 6){
             break;
         }
     }while( gameDeck2.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck3;
     gameDeck3.shuffleDeck();
@@ -132,9 +132,9 @@ int main(){
         if(gameDeck3.size() < 6){
             break;
         }
-        
+
     }while( gameDeck3.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck4;
     gameDeck4.shuffleDeck();
@@ -168,9 +168,9 @@ int main(){
         if(gameDeck4.size() < 6){
             break;
         }
-        
+
     }while( gameDeck4.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck5;
     gameDeck5.shuffleDeck();
@@ -204,9 +204,9 @@ int main(){
         if(gameDeck5.size() < 6){
             break;
         }
-        
+
     }while( gameDeck5.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck6;
     gameDeck6.shuffleDeck();
@@ -240,9 +240,9 @@ int main(){
         if(gameDeck6.size() < 6){
             break;
         }
-        
+
     }while(gameDeck6.moreCards());
-    
+
     std:: cout << "***NEW DECK***" << std:: endl;
     DeckOfCards gameDeck7;
     gameDeck7.shuffleDeck();
@@ -279,9 +279,9 @@ int main(){
         if(gameDeck7.size() < 6){
             break;
         }
-        
+
     }while(gameDeck7.moreCards());
-    
+
 
     return 0;
 }

@@ -1,6 +1,6 @@
 //
 //  GameObjects.cpp
-//  Final_Project_Jmeli
+//  
 //
 //  Created by Joe Meli on 4/29/16.
 //  Copyright © 2016 Joe Meli. All rights reserved.
@@ -37,7 +37,7 @@ std::string Card::cardToString(){
     int suit = this->getsuitVal();
     std::string tempSFace;
     std::string tempSSuit;
-    
+
     for(int i =0; i <=4; i++){
         if (suit == i+1) {
             tempSSuit = SuitArray[i];
@@ -46,7 +46,7 @@ std::string Card::cardToString(){
     for(int j=0; j <=13; j++){
         if (face == j+1) {
                 tempSFace = FaceArray[j];
-            
+
         }
     }
     toReturn = tempSFace + " of " + tempSSuit ;
@@ -56,19 +56,19 @@ std::string Card::cardToString(){
 //********* END of Card Implementation ***********///
 /**
  *  Implementation for the Deck Class
- *  
+ *
  *  Implementation for the Deck Construtor
  *
  *  Implementation for the printDeck Fucntion
- *  
- *  Implementation for the Shuffle Fucntion 
+ *
+ *  Implementation for the Shuffle Fucntion
  *
  *  Implementation for the dealCard fucntion
  *
  *  Implementation for the moreCard Fucntion
  */
 DeckOfCards::DeckOfCards(){
-   
+
     for(int i = 1; i <= 4;i++){
         for(int j = 1; j<=13;j++){
             Card arg(i,j);
@@ -78,7 +78,7 @@ DeckOfCards::DeckOfCards(){
 }
 void DeckOfCards:: printDeck(){
     std::vector<Card>arg=this->deck;
-    
+
     std::vector<Card>::iterator it;
     int i = 1;
     for(it = arg.begin(); it != arg.end(); ++it){
@@ -86,7 +86,7 @@ void DeckOfCards:: printDeck(){
         std::cout<<i<<": "<< arg.cardToString()<< std::endl;
         i++;
     }
-  
+
 }
 bool DeckOfCards:: shuffleDeck(){
     unsigned long size = this->deck.size();
@@ -105,7 +105,7 @@ std::string DeckOfCards:: dealCard(std::vector<Card>arg){
         toReturn = this->deck.front();
         arg.push_back(this->deck.front());
         this->deck.erase(this->deck.begin());
-        
+
     }
     return toReturn.cardToString();
 }
@@ -120,7 +120,7 @@ bool DeckOfCards:: moreCards(){
         std::cout<<"The deck has "<< this->deck.size()<< " cards left."<<std::endl;
         toReturn = true;
     }
-    
+
     return toReturn;
 }
 unsigned long DeckOfCards:: size(){
@@ -138,7 +138,7 @@ unsigned long DeckOfCards:: size(){
  *  Implementation for the DealNewHAnd Fucntion
  *
  *  Implementation for the sortHand fucntion
- * 
+ *
  *  Impelemtation for the Evaluate hand
  *
  */
@@ -161,12 +161,12 @@ void Hand:: getHand(){
         std::cout<< toReturn.cardToString() << std::endl;
     }
      this->sortHand();
-    
+
 }
 void Hand:: DealNewHand(DeckOfCards *arg){
     Card temp;
     this->myCards.clear();
-    
+
     for(int j= 0; j <5; j++){
         temp = arg->deck.front();
         myCards.push_back(temp);
@@ -176,7 +176,7 @@ void Hand:: DealNewHand(DeckOfCards *arg){
 }
 // Comparison for the stable sort fucntion
 bool usingfaceVal(Card i, Card j){
-    
+
     return(i.getfaceVal() < j.getfaceVal());
 }
 
@@ -223,7 +223,7 @@ int Hand:: evaluateHand(){
                 this->Rank = 10;
                 break;
             }
-            
+
         }
         // This checks for a Staight Flush any straight will all five cards of the same suit
         StraightFlushCheck = Card1.faceVal;
@@ -402,7 +402,7 @@ void Hand::RankToString(){
     }else if (rank_== 2){
         std::cout<< PossibleHAnds[1]<<std::endl;
     }
-    
+
 }
   void  Hand::  WhoWon(Hand Dealer, Hand Player){
     int DealerHand = Dealer.Rank;
@@ -428,11 +428,11 @@ void Hand::RankToString(){
     }else if( PlayerHand > DealerHand){
         std::cout<< "Player Won" << std::endl;
     }
-      
+
       if (PlayerHand == DealerHand){
         std:: cout<< "ITS A TIE"<< std::endl;
     }
-    
+
 }
 
 void Hand:: DealerDraw(DeckOfCards *arg){
@@ -440,7 +440,7 @@ void Hand:: DealerDraw(DeckOfCards *arg){
     for(int i=0; i<temp; i++){
         int temp2 = rand()%5+1;
         std::swap(arg->deck.front(),this->myCards[temp2]);
-        
+
         arg->deck.erase(arg->deck.begin());
     }
     std::cout<< "Dealer drew " << temp << " card(s)" << std::endl;

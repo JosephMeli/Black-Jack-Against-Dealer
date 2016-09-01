@@ -1,24 +1,22 @@
 Joe Meli 
-Final project 2
-may 1st 2016
 README FILE
 
 Explantion On how my prgram works:
-The Process of my Implementation is as follows. The Card Class is implemetned with two data types. A Suit and Face value both of type int, these values for a Card hold the representation for the rank two through Ace and the suit data type for the representation for hearts,spades,diamonds,clubs. The ranking of the suits has no meaning, due to the game of poker has no special meaning for the ranking. The Card Class has a set of getters and setter to get the data types. and then a toString fucntion which takes the values and matches them up with an array of strings that has the word values for the suits and faces. 
+The Process of my Implementation is as follows. The Card Class is implemetned with two data types. A Suit and Face value both of type int, these values for a Card hold the representation for the rank two through Ace and the suit data type for the representation for hearts,spades,diamonds,clubs. The ranking of the suits has no meaning, due to the game of poker has no special meaning for the ranking. The Card Class has a set of getters and setter to get the data types. and then a toString fucntion which takes the values and matches them up with an array of strings that has the word values for the suits and faces.
 
 After the Card class comes the DeckOfCards.
-This class contains three  data types one being a vector that represetns the deck. One that is an into which represents the currentCard value on the top of the Deck. Then the last data type is another vector which holds the value of all the discarded cards in from play, or "already dealt". The Deck is intialized withe 52 different cards, that would be in a normal deck of playing cards. After that I implemented a print Deck fucntion which loops through the deck and uses the cardToSting to diplay the whole deck.The class also contain a Shuffle deck fucntion which iteratates through the deck and chooses a random value and a randome modulous value and swaps the two making it purely and truely random each time. The next function is a dealcard fucntion which deals onecard at a time from the top of the deck and then removes it from the deck vector. the last two fucntions are moreCards which return a bool value for if cards are left in the deck and a size fucntion which returns the size of a deck. 
+This class contains three  data types one being a vector that represetns the deck. One that is an into which represents the currentCard value on the top of the Deck. Then the last data type is another vector which holds the value of all the discarded cards in from play, or "already dealt". The Deck is intialized withe 52 different cards, that would be in a normal deck of playing cards. After that I implemented a print Deck fucntion which loops through the deck and uses the cardToSting to diplay the whole deck.The class also contain a Shuffle deck fucntion which iteratates through the deck and chooses a random value and a randome modulous value and swaps the two making it purely and truely random each time. The next function is a dealcard fucntion which deals onecard at a time from the top of the deck and then removes it from the deck vector. the last two fucntions are moreCards which return a bool value for if cards are left in the deck and a size fucntion which returns the size of a deck.
 
 The class has implementation for hand. Hand has two data types one being a vector of 5 cards and then a integer for rank. Rank being rank of the possible hand. The fucntions  in Hand class are as follows a getHand() function which prints the hand on the screen. Then a get rank wihch returns the number of the rank and prints it to the screen. Then a DealNewHand which erases the values of the current hand and deals 5 new cards to the hand requesting a new one. then a sort funtion that will go through the vector using an iterator and using the sort vector fucntion from the vector STL it will sort it from lowest to highest value. after that an evaluate fucntion which manual checks every possible option for a winning hand in poker and then asignes a rank from 1-10 accordingly. then a DiplayFacedownCards fucntion which diplasys a vector and prints it with picture of the joker card making the player/user have no way to tell what the dealer has. Then a Rank to string which uses a static array and the rank from the hand to assign it a string value of the and prints it to the screen. then a whoWon fucntion which compares the two values and diplays the winner to the screen for the hand with the highest value. A dealer draw fucntion which randomly generates a numbr from 0 to three and then has the dealer swap out a randomly selected card in the hand. Then finally the user draw card fucntion which works the exact same as the dealer draw card fucntion, except the numbers are chosen by the user instead of being random.
 
- The results below show the output of the code for 20 hands. 
- I attmpted to use the strategy of gettign more of the same 
+ The results below show the output of the code for 20 hands.
+ I attmpted to use the strategy of gettign more of the same
  or more of the same suit. This was the only stragtey given
  that a highcard hand is 94% more likeley than any other hand.
 
-the driver code is basically the soltuion to problem one 
+the driver code is basically the soltuion to problem one
 then tthen a do while loop which contains one decks worth of hands
-then that do while is called 5 more times with just a new deck each time. 
+then that do while is called 5 more times with just a new deck each time.
 
 
 BELOW IS THE OUT PUT FOR SOLUTIONS TO THE PROJECT
